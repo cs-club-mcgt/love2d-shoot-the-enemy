@@ -26,3 +26,9 @@ end
 function Player:draw()
     love.graphics.draw(self.image, self.x, self.y, 0, 0.5, 0.5)
 end
+
+function Player:keypressed(key)
+    if key == "space" then
+        table.insert(listOfBullets, Bullet(self.x + self.y))
+    end
+end
